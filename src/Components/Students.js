@@ -7,7 +7,7 @@ const Students = () => {
         <div>
             <div className='flex justify-between items-center'>
                 <h1>Students</h1>
-                <label for="my-modal" className="btn modal-button btn-primary"><Icon icon="ant-design:plus-outlined" />&nbsp; ADD</label>
+                <label htmlFor="my-modal" className="btn modal-button btn-primary"><Icon icon="ant-design:plus-outlined" />&nbsp; ADD</label>
             </div>
             <Table></Table>
         </div>
