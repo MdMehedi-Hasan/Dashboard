@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './Table.css'
 
 const Table = () => {
-  const [students, setStudents] = useState('')
+  const [students, setStudents] = useState([])
   
   console.log(students);
   useEffect(() => {
@@ -27,7 +27,7 @@ const Table = () => {
         <tbody>
         {students?.map(student =>
             <tr key={student?._id} className="hover parent">
-              <th>1</th>
+            <th>{students.indexOf(student)+1}</th>
               <td>{student?.Name}</td>
               <td>{student?.Class}</td>
               <td><span className={`badge ${student?.Result === 'Failed' ? 'badge-error' : 'badge-success'}`}>{student.Result}</span></td>
