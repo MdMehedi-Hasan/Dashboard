@@ -1,37 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Modal = ({func}) => {
-    console.log(()=>func());
-    const [name, setName] = useState('')
-    const [level, setLevel] = useState(0)
-    const [score, setScore] = useState(0)
-    const [scoreError, setScoreError] = useState(false)
-    let result;
-    let grade;
-    if (score <= 30) {
-        result = 'Failed';
-        grade = 'Poor'
-    }
-    else if (score >30 && score <= 75) {
-        result = 'Passed';
-        grade = 'Average'
-    }
-    else if(score > 75) {
-        result = 'Passed';
-        grade = 'Excellent'
-    }
-    else if (score < 0) {
-        setScoreError(true)
-    }
-    const studentInfo = {
-        Name: name,
-        Class: level,
-        Score: score,
-        Result: result,
-        Grade: grade
-    }
-
-    
+const Modal = ({func,setName,setScore,setLevel}) => {
     return (
         <div>
             <input type="checkbox" id="my-modal" className="modal-toggle" />

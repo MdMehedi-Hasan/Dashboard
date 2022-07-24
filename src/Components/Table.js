@@ -2,17 +2,15 @@ import { Icon } from '@iconify/react';
 import React, { useEffect, useState } from 'react';
 import './Table.css'
 
-const Table = () => {
+const Table = ({success}) => {
   const [students, setStudents] = useState([])
-  
-  console.log(students);
+  let reFetch = success?.insertedId
 
-  
   useEffect(() => {
     fetch('https://quiet-escarpment-16940.herokuapp.com/newStudent')
     .then(res => res.json())
     .then(data => setStudents(data))
-  }, [])
+  }, [reFetch])
   
 
   return (
