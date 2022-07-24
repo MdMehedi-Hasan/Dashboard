@@ -6,11 +6,15 @@ const Table = () => {
   const [students, setStudents] = useState([])
   
   console.log(students);
+
+  
   useEffect(() => {
-    fetch('http://localhost:3000/newStudent')
+    fetch('https://quiet-escarpment-16940.herokuapp.com/newStudent')
     .then(res => res.json())
     .then(data => setStudents(data))
-  },[])
+  }, [])
+  
+
   return (
     <div className="overflow-x-auto">
       <table className="table w-full">
