@@ -2,8 +2,8 @@ import React from 'react';
 
 const DashboardPage = () => {
     return (
-        <div>
-            Dashboard page
+        <div className='text-4xl font-bold'>
+            Comming soon!
         </div>
     );
 };

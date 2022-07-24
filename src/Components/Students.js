@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Table from './Table'
 import { Icon } from '@iconify/react';
 import Modal from './Modal';
+import ConfirmationModal from './ConfirmationModal';
 
 const Students = () => {
     const [name, setName] = useState('')
@@ -53,12 +54,13 @@ const Students = () => {
     }
     return (
         <div>
-            <div className='flex justify-between items-center'>
-                <h1>Students</h1>
+            <div className='flex justify-between items-center mt-8 mb-6'>
+                <h1 className='font-bold'>Students</h1>
                 <label htmlFor="my-modal" className="btn modal-button btn-primary"><Icon icon="ant-design:plus-outlined" />&nbsp; ADD</label>
             </div>
             <Table success={success}></Table>
-            <Modal func={()=>submit()} setName={setName} setLevel={setLevel} setScore={setScore}></Modal>
+            <Modal func={() => submit()} setName={setName} setLevel={setLevel} setScore={setScore}></Modal>
+            <ConfirmationModal></ConfirmationModal>
         </div>
     );
 };
